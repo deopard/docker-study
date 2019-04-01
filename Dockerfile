@@ -12,4 +12,3 @@ COPY . /usr/src
 
 RUN /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && ruby --version && bin/bundle install && ruby --version"
 
-
