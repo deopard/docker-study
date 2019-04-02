@@ -9,11 +9,11 @@ default: &default
   encoding: utf8mb4
   charset: utf8mb4
   host: db
-  port: 3307
+  port: 3306
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: study_db
-  username: study
-  password: 
+  username: study 
+  password: safe_password 
   timeout: 5000
 
 development:
