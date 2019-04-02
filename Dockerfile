@@ -23,4 +23,5 @@ RUN echo $RAILS_ENV
 RUN echo bash
 RUN /bin/bash -c "echo $RAILS_ENV"
 ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
+RUN echo $RAILS_MASTER_KEY
 CMD /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && bin/rails server -e $RAILS_ENV --port 3000 --binding 0.0.0.0"
