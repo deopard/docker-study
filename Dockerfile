@@ -9,7 +9,9 @@ WORKDIR /usr/src
 
 # Copy App
 COPY . /usr/src
-
+RUN /bin/bash -c "ls -al bin"
+RUN chmod +x bin/bundle
+RUN /bin/bash -c "ls -al bin"
 RUN /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && ruby --version && bin/bundle install"
 
 EXPOSE 3000
