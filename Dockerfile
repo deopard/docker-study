@@ -17,6 +17,7 @@ RUN /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && ruby --versio
 EXPOSE 3000
 
 RUN chmod +x /usr/src/start.sh
+ARG RAILS_ENV=development
 RUN echo sh
 RUN echo $RAILS_ENV
 RUN echo bash
