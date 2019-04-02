@@ -19,6 +19,7 @@ EXPOSE 3000
 RUN chmod +x /usr/src/start.sh
 ARG RAILS_ENV=development
 ARG RAILS_MASTER_KEY
+ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 RUN echo sh
 RUN echo $RAILS_ENV
 RUN echo bash
