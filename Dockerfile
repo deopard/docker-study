@@ -22,4 +22,4 @@ RUN echo sh
 RUN echo $RAILS_ENV
 RUN echo bash
 RUN /bin/bash -c "echo $RAILS_ENV"
-CMD ./start.sh $RAILS_ENV
+CMD ["/bin/bash", "-c", "./start.sh", "$RAILS_ENV"]
