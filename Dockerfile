@@ -10,5 +10,9 @@ WORKDIR /usr/src
 # Copy App
 COPY . /usr/src
 
-RUN /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && ruby --version && bin/bundle install && ruby --version"
+RUN /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && ruby --version && bin/bundle install"
 
+EXPOSE 3000
+
+RUN chmod +x /usr/src/start.sh
+CMD ["./start.sh"]
