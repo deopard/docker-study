@@ -9,16 +9,14 @@ WORKDIR /usr/src
 
 # Copy App
 COPY . /usr/src
-RUN /bin/bash -c "ls -al bin"
 RUN chmod +x bin/*
-RUN /bin/bash -c "ls -al bin"
 RUN /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && ruby --version && bin/bundle install"
 
 EXPOSE 3000
 
-RUN chmod +x /usr/src/start.sh
 ARG RAILS_ENV=development
 ARG RAILS_MASTER_KEY
 ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 ENV RAILS_ENV=$RAILS_ENV
+RUN /bin/bash -c "ln -sf /dev/stdout /usr/src/log/production.log"
 CMD /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && bin/rails server -e $RAILS_ENV --port 3000 --binding 0.0.0.0"
