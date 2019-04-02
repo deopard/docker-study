@@ -22,4 +22,4 @@ RUN echo sh
 RUN echo $RAILS_ENV
 RUN echo bash
 RUN /bin/bash -c "echo $RAILS_ENV"
-CMD /bin/bash -c "/etc/profile.d/rvm.sh && rvm use 2.6.1 && bin/rails server -e $RAILS_ENV --port 3000 --binding 0.0.0.0"
+CMD /bin/bash -c "source /etc/profile.d/rvm.sh && rvm use 2.6.1 && bin/rails server -e $RAILS_ENV --port 3000 --binding 0.0.0.0"
